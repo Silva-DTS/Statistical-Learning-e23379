@@ -24,6 +24,10 @@ class DataInspector:
         else:
             print("No data loaded yet.")
 
+    def delete_columns(self):
+        print("\nDropping specified columns from dataset...")
+        # Add your column dropping logic here
+
     def column_details(self):
         print("\n--- Column Details ---")
         if self.df is not None:
@@ -101,7 +105,7 @@ class PlottingMethods:
         pass
 
     def get_methods_info(self):
-        return {"status": "success", "response": {"Method": ["plot_pie_chart", "plot_bar_chart", "plot_histogram"], "Status": ["Ready", "Ready", "Ready"]}}
+        return {"status": "success", "response": {"Method": ["plot_pie_chart", "plot_bar_chart", "plot_histogram", "plot_heat_map", "plot_sankey_diagram", "plot_simple_sunburst_graph"], "Status": ["Ready", "Ready", "Ready", "Ready", "Ready", "Ready"]}}
 
     def display_image(self, result):
         print("\nDisplaying rendered plot graphic...")
@@ -113,4 +117,13 @@ class PlottingMethods:
         return {"status": "success"}
 
     def plot_histogram(self, x, data):
+        return {"status": "success"}
+
+    def plot_heat_map(self, values, index, columns, aggregade_method, title, data):
+        return {"status": "success"}
+
+    def plot_sankey_diagram(self, source_column, target_column, values, data):
+        return {"status": "success"}
+
+    def plot_simple_sunburst_graph(self, path, values, data, title):
         return {"status": "success"}
